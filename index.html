@@ -48,7 +48,7 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 font-sans text-msdark">
+  <body class="bg-gray-50 font-sans text-msdark" id="cvBody">
     <!-- Loading screen -->
     <div
       id="loading-screen"
@@ -920,8 +920,8 @@
         const data = portfolioData;
 
         // Personal Info
-        document.getElementById("nav-name").textContent =
-          data.personalInfo.name;
+        const navNameElement = document.getElementById("nav-name");
+navNameElement.innerHTML = `<a href="#cvBody">${data.personalInfo.name}</a>`;
         document.getElementById("nav-title").textContent = "Data Engineer";
         document.getElementById("hero-name").textContent =
           data.personalInfo.name;
